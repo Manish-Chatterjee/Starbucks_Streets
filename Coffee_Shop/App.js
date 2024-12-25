@@ -1,20 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, SafeAreaView } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import UserName from './component/FirstPage/UserName';
+import HomePage from './component/HomePage/HomePage'; // Make sure to create this component
+import Home from './component/Home';
+import TopUp from './component/TopUp';
+import Order from './component/OnlineOrder/Order';
+import Customise from './component/OnlineOrder/Customise';
+import PaymentPage1 from './component/Payment/PaymentPage1';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      {/* change initial route later as the first page */}
+      <Stack.Navigator initialRouteName="Home">
+        {/* <Stack.Screen name="User Name" component={UserName} /> */}
+        {/* <Stack.Screen name="HomePage" component={HomePage} /> */}
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="TopUp" component={TopUp} />
+        <Stack.Screen name="Order" component={Order} />
+        <Stack.Screen name="Customise" component={Customise} />
+        <Stack.Screen name="PaymentPage1" component={PaymentPage1} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
+
+export default App;
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
+    backgroundColor: 'white',
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
