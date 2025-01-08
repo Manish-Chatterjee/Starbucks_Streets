@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0, // This will stretch the navbar to the full width
     zIndex: 10,
-    height: 80,
+    height: 90,
     alignItems: 'center', // Center the content horizontally
     borderWidth: 1,
     borderColor: 'black',

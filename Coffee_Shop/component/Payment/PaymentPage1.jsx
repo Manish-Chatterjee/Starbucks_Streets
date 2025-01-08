@@ -10,7 +10,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Entypo from 'react-native-vector-icons/Entypo';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 
-export default function PaymentPage1() {
+export default function PaymentPage1({route}) {
 
     const [selectedOption, setSelectedOption] = useState('delivery');
     const [modalVisible, setModalVisible] = useState(false);
@@ -64,6 +64,23 @@ export default function PaymentPage1() {
     // const navigation = useNavigation();
 
     // onPress={() => navigation.navigate('TopUp')}
+
+    const { orderDetails } = route.params;
+    const {
+      id,
+      name,
+      image,
+      price,
+      includes,
+      quantity,
+      selectedSize,
+      availableIn,
+      milk,
+      espressoShot,
+      finalPrice,
+    } = orderDetails;
+
+    console.log(orderDetails,'order Details')
 
   return (
     <View style={styles.container}>
@@ -149,13 +166,14 @@ export default function PaymentPage1() {
             <View style={{flexDirection: 'row', alignItems:'center', position: 'relative'}}>
                 <Image source= {{ uri: 'https://t3.ftcdn.net/jpg/02/98/65/92/360_F_298659202_6y0mYN6XtC8RvhJPYnmmTwEnxJKYNozJ.jpg'}} style={{width: 70, height: 70}}/>
                 <View>
-                    <Text style={{fontWeight: 700, color:'#04643c'}}>Espresso</Text>
-                    <Text style={{color: 'grey', fontSize: 10, fontWeight: 600}}>Grande, Cold, Almond Milk</Text>
-                    <Text style={{color: '#d4c495', fontWeight: 600, marginTop: 5}}>56.000</Text>
+                    <Text style={{fontWeight: 700, color:'#04643c'}}>{name}</Text>
+                    <Text style={{color: 'grey', fontSize: 10, fontWeight: 600}}>{selectedSize.type}, {availableIn.type}, {milk.type}</Text>
+                    {espressoShot?.type !== 'no shots' && (<Text style={{color: 'grey', fontSize: 10, fontWeight: 600}}>{espressoShot.type}</Text>)}
+                    <Text style={{color: '#d4c495', fontWeight: 600, marginTop: 5}}>Rp {finalPrice.toFixed(3)}</Text>
                 </View>
                 <View style={{position: 'absolute', bottom: 0, right: 0, zIndex: 2, width: 80, height: 40, justifyContent: 'space-evenly', alignItems: 'center', flexDirection:"row"}}>
                     <View style={{aspectRatio:1/1, width: 25, borderRadius: 100, backgroundColor:'#d4c495', justifyContent: 'center', alignItems: 'center'}}>
-                        <Text style={{textAlign: 'center', fontWeight: 600, color: 'white'}}>2</Text>
+                        <Text style={{textAlign: 'center', fontWeight: 600, color: 'white'}}>{quantity}</Text>
                     </View>
                     <Feather name="edit" size={16} color="#04643c" />
                 </View>
@@ -199,7 +217,7 @@ export default function PaymentPage1() {
                 <Text style={{fontWeight: 700, fontSize: 12, color: "#04643c", marginBottom: 5}}>Amount Detail</Text>
                 <View style={{flexDirection: 'row', justifyContent: 'space-between', marginBlock: 2}}>
                     <Text style={{fontWeight: 400, fontSize: 12, color: "gray"}}>Price</Text>
-                    <Text style={{fontWeight: 700, fontSize: 12, color: "#d4c495"}}>Rp 56.500</Text>
+                    <Text style={{fontWeight: 700, fontSize: 12, color: "#d4c495"}}>Rp {finalPrice.toFixed(3)}</Text>
                 </View>
                 <View style={{flexDirection: 'row', justifyContent: 'space-between', marginBlock: 2}}>
                     {selectedOption === 'delivery' ?
@@ -211,7 +229,7 @@ export default function PaymentPage1() {
                 </View>
                 <View style={{flexDirection: 'row', justifyContent: 'space-between', marginBlock: 2}}>
                     <Text style={{fontWeight: 700, fontSize: 12, color: "#04643c"}}>Total</Text>
-                    <Text style={{fontWeight: 700, fontSize: 12, color: "#d4c495"}}>Rp 71.500</Text>
+                    <Text style={{fontWeight: 700, fontSize: 12, color: "#d4c495"}}>Rp {(finalPrice + 15).toFixed(3)}</Text>
                 </View>
             </View>
 

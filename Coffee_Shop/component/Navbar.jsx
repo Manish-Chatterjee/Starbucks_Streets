@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'lightgreen',
     flex: 1,
-    // padding: 10,
+    paddingInline: 10,
 
     flexDirection: 'row',
     // justifyContent: 'space-evenly',
