@@ -80,7 +80,6 @@ export default function PaymentPage1({route}) {
       finalPrice,
     } = orderDetails;
 
-    console.log(orderDetails,'order Details')
 
   return (
     <View style={styles.container}>
@@ -229,7 +228,9 @@ export default function PaymentPage1({route}) {
                 </View>
                 <View style={{flexDirection: 'row', justifyContent: 'space-between', marginBlock: 2}}>
                     <Text style={{fontWeight: 700, fontSize: 12, color: "#04643c"}}>Total</Text>
-                    <Text style={{fontWeight: 700, fontSize: 12, color: "#d4c495"}}>Rp {(finalPrice + 15).toFixed(3)}</Text>
+                    <Text style={{fontWeight: 700, fontSize: 12, color: "#d4c495"}}>
+                        Rp {selectedOption === 'delivery' ? (finalPrice + 15).toFixed(3) : finalPrice.toFixed(3)} 
+                    </Text>
                 </View>
             </View>
 

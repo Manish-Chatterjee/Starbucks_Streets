@@ -62,6 +62,8 @@ const HomeSection = () => {
 
             {/* <hr /> */}
             <View style={{borderWidth: 1, borderColor: "#fbf1db", width: '80%', marginBlock: 20}} />
+
+
         </View>
     // </ScrollView>
   )

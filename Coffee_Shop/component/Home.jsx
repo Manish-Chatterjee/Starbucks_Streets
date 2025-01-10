@@ -30,8 +30,9 @@ const styles = StyleSheet.create({
     zIndex: 10,
     height: 90,
     alignItems: 'center', // Center the content horizontally
-    borderWidth: 1,
-    borderColor: 'black',
+    // borderWidth: 1,
+    // borderColor: 'black',
+    // backgroundColor: 'lightgreen',
     width: '100%',
     borderRadius: 10
   }
