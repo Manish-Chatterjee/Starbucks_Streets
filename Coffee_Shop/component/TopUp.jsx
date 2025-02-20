@@ -1,10 +1,12 @@
 import { Image, ScrollView, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, KeyboardAvoidingView } from 'react-native'
 import React, { useState } from 'react'
 import Header from './HomePage/Header';
+import PaymentSuccess from './HomePage/PaymentSuccess';
 
 export default function TopUp() {
 
     const [price, setPrice] = useState('');
+    const [showPaymentSuccess, setShowPaymentSuccess] = useState(false); // New state for PaymentSuccess visibility
 
     const formatPrice = (text) => {
       // Remove all non-numeric characters
@@ -25,7 +27,21 @@ export default function TopUp() {
 
   const handleTopUpPress = (value) => {
     setPrice(formatPrice(value));
-};
+  };
+
+  const handlePaymentSuccess = () => {
+    Keyboard.dismiss();
+    if (price !== undefined) {
+        setShowPaymentSuccess(true); // Set to false if price is null or empty
+    } else {
+        setShowPaymentSuccess(false); // Show PaymentSuccess on button click
+    }
+    setPrice();
+  }
+
+  const handleClosePaymentSuccess = () => {
+    setShowPaymentSuccess(false); // Close PaymentSuccess
+  };
     
 
   return (
@@ -84,16 +100,19 @@ export default function TopUp() {
                     returnKeyType="done"
                   />
               </View>
-              <TouchableOpacity style={styles.button}>
+              <TouchableOpacity style={styles.button} onPress={handlePaymentSuccess}>
                       <Text style={{color: "#414141", fontSize: 18, color: "white", fontWeight: 400, textAlign: 'center'}}>TOP-UP</Text>
               </TouchableOpacity>
+
+              {showPaymentSuccess && <PaymentSuccess onClose={handleClosePaymentSuccess} />}
+
     </KeyboardAvoidingView>
   )
 }
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 1,
+        flex: 1,
     },
     box: {
         aspectRatio: '1.586/1',

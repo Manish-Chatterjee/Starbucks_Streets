@@ -9,6 +9,7 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Fontisto from 'react-native-vector-icons/Fontisto';
+import PaymentSuccess from '../HomePage/PaymentSuccess';
 
 export default function PaymentPage1({route}) {
 
@@ -17,6 +18,17 @@ export default function PaymentPage1({route}) {
     const [isSubmitEnabled, setIsSubmitEnabled] = useState(false);
     const [inputValues, setInputValues] = useState(['', '', '', '', '', '']);
     const inputRefs = useRef([]);
+
+    const [showPaymentSuccess, setShowPaymentSuccess] = useState(false); // State for PaymentSuccess visibility
+
+    const handlePaymentSuccess = () => {
+        // Logic for handling payment submission
+        setShowPaymentSuccess(true); // Show PaymentSuccess on submit
+    };
+
+    const handleClosePaymentSuccess = () => {
+        setShowPaymentSuccess(false); // Close PaymentSuccess
+    };
 
     const handleChange = (text, index) => {
         const newInputValues = [...inputValues];
@@ -253,6 +265,8 @@ export default function PaymentPage1({route}) {
             <Text style={{color: 'white', fontWeight: '600'}}>PAY</Text>
         </TouchableOpacity>
 
+        {showPaymentSuccess && <PaymentSuccess onClose={handleClosePaymentSuccess} />}
+
 
 <Modal
             animationType="fade" // Use fade animation
@@ -293,6 +307,7 @@ export default function PaymentPage1({route}) {
                                 setIsSubmitEnabled(false);
                                 // Close the modal
                                 setModalVisible(!modalVisible);
+                                handlePaymentSuccess();
                             }
                         }}
                         disabled={!isSubmitEnabled} // Disable button if not enabled
