@@ -3,7 +3,7 @@ import React from 'react'
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { BlurView } from 'expo-blur';
 
-export default function PaymentSuccess({onClose}) {
+export default function PaymentSuccess({onClose, points}) {
   return (
     <BlurView 
     style={styles.container}
@@ -18,7 +18,7 @@ export default function PaymentSuccess({onClose}) {
                 <Text style={{color: 'white', fontSize: 24, fontWeight: 300}}>THANK YOU!</Text>
                 <Text style={{color: 'white', fontWeight: 800}}>PAYMENT SUCCESS</Text>
             </View>
-            <Text style={{color: '#d4c495'}}>you get <Text style={{fontWeight: '800'}}>4 stars</Text> reward</Text>
+            <Text style={{color: '#d4c495'}}>you get <Text style={{fontWeight: '800'}}>{points} star</Text> reward</Text>
         </View>
       </View>
     </BlurView>
