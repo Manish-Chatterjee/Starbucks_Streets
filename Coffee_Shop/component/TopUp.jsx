@@ -140,61 +140,6 @@ export default function TopUp() {
 
               {showPaymentSuccess && <PaymentSuccess onClose={handleClosePaymentSuccess} points={1}/>}
 
-
-{/* <Modal
-            animationType="fade" // Use fade animation
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={() => {
-                setModalVisible(!modalVisible);
-            }}>
-            <View style={styles.centeredView}>
-                <View style={styles.modalView}>
-                    <Text style={styles.modalText}>Insert your Starbucks App PIN</Text>
-                    <View style={styles.inputContainer}>
-                        {inputValues.map((value, index) => (
-                            <TextInput
-                            //     key={index}
-                            //     ref={el => inputRefs.current[index] = el} // Assign ref to each input
-                            //     style={styles.input}
-                            //     value={value}
-                            //     onChangeText={(text) => handleChange(text, index)}
-                            //     keyboardType="numeric" // Numeric keyboard
-                            //     maxLength={1} // Limit to 1 digit
-                            //     textAlign="center" // Center text
-                            //     onKeyPress={({ nativeEvent }) => {
-                            //         if (nativeEvent.key === 'Backspace') {
-                            //             handleBackspace(index);
-                            //         }
-                            //     }}
-
-                              placeholder='Enter your amount'
-                              keyboardType='numeric'
-                              onChangeNumber={onChangeNumber}
-                            />
-                        ))}
-                    </View>
-                    <Pressable
-                        style={[styles.button, styles.buttonClose, { opacity: isSubmitEnabled ? 1 : 0.5 }]} // Change opacity based on enabled state
-                        onPress={() => {
-                            if (isSubmitEnabled) {
-                                // Clear the input values
-                                setInputValues(['', '', '', '', '', '']);
-                                // Reset the submit button state
-                                setIsSubmitEnabled(false);
-                                // Close the modal
-                                setModalVisible(!modalVisible);
-                                handlePaymentSuccess();
-                            }
-                        }}
-                        disabled={!isSubmitEnabled} // Disable button if not enabled
-                    >
-                        <Text style={styles.textStyle}>Submit</Text>
-                    </Pressable>
-                </View>
-            </View>
-        </Modal> */}
-
 <Modal
         animationType="fade"
         transparent={true}
