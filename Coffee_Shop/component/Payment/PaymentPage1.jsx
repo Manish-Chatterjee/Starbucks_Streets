@@ -12,6 +12,7 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import PaymentSuccess from '../HomePage/PaymentSuccess';
 
 export default function PaymentPage1({route}) {
+    console.log(route.params)
 
     const [selectedOption, setSelectedOption] = useState('delivery');
     const [modalVisible, setModalVisible] = useState(false);
@@ -265,7 +266,7 @@ export default function PaymentPage1({route}) {
             <Text style={{color: 'white', fontWeight: '600'}}>PAY</Text>
         </TouchableOpacity>
 
-        {showPaymentSuccess && <PaymentSuccess onClose={handleClosePaymentSuccess} />}
+        {showPaymentSuccess && <PaymentSuccess onClose={handleClosePaymentSuccess} points={4}/>}
 
 
 <Modal

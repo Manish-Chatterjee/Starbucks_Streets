@@ -48,7 +48,10 @@ const HomeSection = () => {
                     <Image source={{ uri: 'https://liliebakery.fr/wp-content/uploads/2024/10/latte-macchiato-recette-facile-lilie-bakery.jpg' }} style={{ width: 70, height: 70, borderRadius: 100}} />
                     <Text style={{color: "#414141", fontSize: 12, fontWeight: 500, textAlign: 'center', marginTop: 10}}>Order</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => alert("Payment page can be reached after order page")} id='Payment'>
+                <TouchableOpacity onPress={() => 
+                // navigation.navigate('PaymentPage1')}
+                    alert("Payment page can be reached after order page")} 
+                    id='Payment'>
                     <Image source={{ uri: 'https://liliebakery.fr/wp-content/uploads/2024/10/latte-macchiato-recette-facile-lilie-bakery.jpg' }} style={{ width: 70, height: 70, borderRadius: 100}} />
                     <Text style={{color: "#414141", fontSize: 12, fontWeight: 500, textAlign: 'center', marginTop: 10}}>Payment</Text>
                 </TouchableOpacity>
