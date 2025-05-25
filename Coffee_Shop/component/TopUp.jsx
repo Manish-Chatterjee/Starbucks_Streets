@@ -234,14 +234,15 @@ const styles = StyleSheet.create({
         margin: 'auto',
         marginBlock: 50
       },
-      button: {
-        backgroundColor: '#04643c',
-        margin: 'auto',
-        width: '80%',
-        paddingInline: 20,
-        paddingBlock: 10,
-        borderRadius: 100,
-      },
+      // button: {
+      //   backgroundColor: '#04643c',
+      //   margin: 'auto',
+      //   width: '80%',
+      //   paddingInline: 20,
+      //   paddingBlock: 10,
+      //   borderRadius: 100,
+      // },     already present below
+
       // Modal
       modalView: {
 

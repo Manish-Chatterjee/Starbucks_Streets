@@ -1,5 +1,5 @@
 import { Image, Pressable, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Header from '../HomePage/Header'
 import { useNavigation } from '@react-navigation/native';
 import { Modal } from 'react-native';
@@ -12,7 +12,60 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import PaymentSuccess from '../HomePage/PaymentSuccess';
 
 export default function PaymentPage1({route}) {
-    console.log(route.params)
+    // console.log(route,'route');
+    const navigation = useNavigation();
+    // const route = useRoute();
+
+    // Payment page 2 routing
+//       const { orderDetails = {}, selectedPayment } = route.params || {};
+
+//   const [cardInfo, setCardInfo] = useState({
+//     cardNumber: '6136 **** **** 3746',
+//     amount: orderDetails ? orderDetails.finalPrice : 0,
+//   });
+
+//     useEffect(() => {
+//     if (selectedPayment && selectedPayment.type) {
+//       let cardNumber = '';
+//       let amount = 0;
+
+//       switch (selectedPayment.type) {
+//         case 'master':
+//           cardNumber = '6136 **** **** 3746';
+//           amount = 693000;
+//           break;
+//         case 'visa':
+//           cardNumber = '1234 **** **** 5678';
+//           amount = 865000;
+//           break;
+//         case 'paypal':
+//           cardNumber = '9876 **** **** 5432';
+//           amount = 219000;
+//           break;
+//         default:
+//           cardNumber = '6136 **** **** 3746';
+//           amount = orderDetails ? orderDetails.finalPrice : 0;
+//       }
+
+//       setCardInfo({ cardNumber, amount });
+//     }
+//   }, [selectedPayment]);
+
+//   const {
+//     id = '',
+//     name = '',
+//     image = '',
+//     price = 0,
+//     includes = [],
+//     quantity = 0,
+//     selectedSize = {},
+//     availableIn = {},
+//     milk = {},
+//     espressoShot = {},
+//     finalPrice = 0,
+//   } = orderDetails;
+
+  //////////
 
     const [selectedOption, setSelectedOption] = useState('delivery');
     const [modalVisible, setModalVisible] = useState(false);
@@ -78,7 +131,11 @@ export default function PaymentPage1({route}) {
 
     // onPress={() => navigation.navigate('TopUp')}
 
-    const { orderDetails } = route.params;
+const { orderDetails } = route.params || {};
+const [selectedPayment, setSelectedPayment] = useState(null);
+console.log(selectedPayment?.type," something")
+
+    // const { orderDetails } = route.params;
     const {
       id,
       name,
@@ -92,6 +149,22 @@ export default function PaymentPage1({route}) {
       espressoShot,
       finalPrice,
     } = orderDetails;
+
+// for the paymentPage2 selected payment
+
+    // Update selectedPayment if passed back from PaymentPage2
+useEffect(() => {
+  if (route.params?.selectedPayment) {
+    setSelectedPayment(route.params.selectedPayment);
+  }
+}, [route.params?.selectedPayment]);
+
+// When navigating to PaymentPage2, pass orderDetails
+const goToPaymentPage2 = () => {
+  navigation.navigate('PaymentPage2', { orderDetails });
+};
+
+/////////////////////
 
 
   return (
@@ -197,16 +270,33 @@ export default function PaymentPage1({route}) {
             <Text style={{fontSize: 12, fontWeight: 700, color:'#04643c'}}>PAYMENT METHOD</Text>
             <Text style={{fontSize: 10, fontWeight: 500, color:'#d4c495', marginBlock: 10}}>You will get 4 stars pay with Starbucks Card</Text>
 
-            <View style={{justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center', marginBlock: 5}}>
+            <TouchableOpacity 
+            // onPress={() => navigation.navigate('PaymentPage2')} 
+            onPress={goToPaymentPage2}
+            style={{justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center', marginBlock: 5}}>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                    <Image source={{ uri: 'https://www.starbucks.co.th/stb-media/2020/10/CARD-STARBUCKS-CARD-WORDMARK.png'}} style={{height: 50, width: 80, marginRight: 10}} resizeMode='contain'/>
+                    <Image 
+                    // source={{ uri: 'https://www.starbucks.co.th/stb-media/2020/10/CARD-STARBUCKS-CARD-WORDMARK.png'}} 
+                    source={{ uri: selectedPayment?.image }}
+                    style={{height: 50, width: 80, marginRight: 10}} resizeMode='contain'/>
+
                     <View>
-                        <Text>6136 **** **** 3746</Text>
-                        <Text style={{fontSize: 12, fontWeight: 400, color:'#04643c'}}>Rp 693.000</Text>
+                        <Text>{selectedPayment?.cardNo}</Text>
+                        <Text style={{fontSize: 12, fontWeight: 400, color:'#04643c'}}>
+                            {/* Rp 693.000 */}
+                                  {selectedPayment && (
+        <Text>Rp {selectedPayment.price}</Text>
+      )}
+                        </Text>
+                        {/* <Text>{cardInfo.cardNumber}</Text> */}
+                        {/* <Text style={{ fontSize: 12, fontWeight: 400, color: '#04643c' }}> */}
+                          {/* Rp {cardInfo.amount.toLocaleString()} */}
+                          {/* Rp {cardInfo.amount} */}
+                        {/* </Text> */}
                     </View>
                 </View>
                     <MaterialIcons name="arrow-forward-ios" size={28} color="#04643c" />
-            </View>
+            </TouchableOpacity>
 
             <View style={{flexDirection: 'row', justifyContent: 'space-between', marginBlock: 5}}>
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>

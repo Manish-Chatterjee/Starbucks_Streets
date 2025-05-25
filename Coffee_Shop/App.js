@@ -9,6 +9,7 @@ import TopUp from './component/TopUp';
 import Order from './component/OnlineOrder/Order';
 import Customise from './component/OnlineOrder/Customise';
 import PaymentPage1 from './component/Payment/PaymentPage1';
+import PaymentPage2 from './component/Payment/PaymentPage2';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ const App = () => {
         <Stack.Screen name="Order" component={Order} />
         <Stack.Screen name="Customise" component={Customise} />
         <Stack.Screen name="PaymentPage1" component={PaymentPage1} />
+        <Stack.Screen name="PaymentPage2" component={PaymentPage2} />
       </Stack.Navigator>
     </NavigationContainer>
   );
