@@ -1,16 +1,22 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../HomePage/Header'
 import { RadioButton } from 'react-native-paper'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import Accordion from './Accordion';
+// import Accordion from './Accordion';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import Carousel from './Carousel';
 
 export default function PaymentPage2() {
   const navigation = useNavigation();
   const route = useRoute();
 
     const [selectedPayment, setSelectedPayment] = useState({ type: '', price: '' }); // State for radio button
+    const [isProceedEnabled, setIsProceedEnabled] = useState(false);
+
+  useEffect(() => {
+    setIsProceedEnabled(selectedPayment.type !== '');
+  }, [selectedPayment]);
 
   const SquareRadioButton = ({ value, selectedValue, onPress }) => {
     return (
@@ -49,7 +55,7 @@ export default function PaymentPage2() {
         <Text style={{fontSize: 12, fontWeight: 700, color:'#04643c', marginInline: 'auto', marginBlock: 20}}>STARBUCKS CARD</Text>
 
         {/* <View style={styles.accordion}><Text>Accordion</Text></View> */}
-        <Accordion/>
+        <Carousel/>
       </View>
 
       <Text style={{fontSize: 12, fontWeight: 700, color:'#04643c', marginInline: 'auto', marginBlock: 20}}>OR</Text>
@@ -109,11 +115,16 @@ export default function PaymentPage2() {
         </RadioButton.Group>
       </View>
 
-      <TouchableOpacity style={styles.button} 
+      <TouchableOpacity 
+        style={[
+          styles.button,
+          { opacity: isProceedEnabled ? 1 : 0.5 }
+        ]}
       // onPress={() => navigation.navigate('PaymentPage1')}
       // onPress={() => navigation.goBack()}
       // onPress={() => navigation.navigate('PaymentPage1', { ...route.params, selectedPayment })}
       onPress={handleProceed}
+      disabled={!isProceedEnabled}
       >
         <Text style={{color: "#414141", fontSize: 18, color: "white", fontWeight: 400, textAlign: 'center'}}>PROCEED</Text>
       </TouchableOpacity>
