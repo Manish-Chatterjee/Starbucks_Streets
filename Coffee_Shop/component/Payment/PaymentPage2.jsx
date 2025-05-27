@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import Header from '../HomePage/Header'
 import { RadioButton } from 'react-native-paper'
@@ -6,6 +6,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 // import Accordion from './Accordion';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import Carousel from './Carousel';
+import { Image } from 'expo-image';
 
 export default function PaymentPage2() {
   const navigation = useNavigation();

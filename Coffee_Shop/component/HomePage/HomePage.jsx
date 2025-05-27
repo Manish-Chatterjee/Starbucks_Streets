@@ -1,10 +1,11 @@
 // App.js
 import React from 'react';
-import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import HomeSection from './HomeSection';
 import { TbBackground } from 'react-icons/tb';
 import { Bar } from 'react-native-progress';
+import { Image } from 'expo-image';
 
 export default function HomePage({ route }) {
   const currentPoints = 21; // Current points

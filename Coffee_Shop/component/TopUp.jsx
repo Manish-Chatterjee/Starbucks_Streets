@@ -1,7 +1,8 @@
-import { Image, ScrollView, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, KeyboardAvoidingView, Modal, Pressable, SafeAreaView } from 'react-native'
+import { ScrollView, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, KeyboardAvoidingView, Modal, Pressable, SafeAreaView } from 'react-native'
 import React, { useState } from 'react'
 import Header from './HomePage/Header';
 import PaymentSuccess from './HomePage/PaymentSuccess';
+import { Image } from 'expo-image';
 
 export default function TopUp() {
 
@@ -134,9 +135,19 @@ export default function TopUp() {
                   /> */}
                   <Text>{price}</Text>
               </View>
-              <TouchableOpacity style={styles.button} onPress={handlePaymentSuccess}>
+              {/* <TouchableOpacity style={styles.button} onPress={handlePaymentSuccess}>
                       <Text style={{color: "#414141", fontSize: 18, color: "white", fontWeight: 400, textAlign: 'center'}}>TOP-UP</Text>
-              </TouchableOpacity>
+              </TouchableOpacity> */}
+              <TouchableOpacity
+  style={[styles.button, { opacity: price ? 1 : 0.5 }]}
+  onPress={price ? handlePaymentSuccess : null}
+  disabled={!price}
+>
+  <Text style={{ color: "white", fontSize: 18, fontWeight: "400", textAlign: "center" }}>
+    TOP-UP
+  </Text>
+</TouchableOpacity>
+
 
               {showPaymentSuccess && <PaymentSuccess onClose={handleClosePaymentSuccess} points={1}/>}
 

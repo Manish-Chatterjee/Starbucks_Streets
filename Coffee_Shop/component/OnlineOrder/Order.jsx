@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import coffeeItems from '../../data/coffeeItems.json'; // Adjust the path as necessary
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Header from '../HomePage/Header';
 import { useNavigation } from '@react-navigation/native';
+import { Image } from 'expo-image';
 
 export default function Order() {
 

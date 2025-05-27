@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { RadioButton } from 'react-native-paper'; // Import RadioButton
 import { useNavigation } from '@react-navigation/native';
+import { Image } from 'expo-image';
 
 
 const SquareRadioButton = ({ value, selectedValue, onPress }) => {

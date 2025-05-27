@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { BlurView } from 'expo-blur';
+import { Image } from 'expo-image';
 
 export default function Navbar() {
   return (

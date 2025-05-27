@@ -1,4 +1,4 @@
-import { Image, Pressable, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Pressable, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useRef, useState } from 'react'
 import Header from '../HomePage/Header'
 import { useNavigation } from '@react-navigation/native';
@@ -10,6 +10,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Entypo from 'react-native-vector-icons/Entypo';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import PaymentSuccess from '../HomePage/PaymentSuccess';
+import { Image } from 'expo-image';
 
 export default function PaymentPage1({route}) {
     // console.log(route,'route');
@@ -133,7 +134,7 @@ export default function PaymentPage1({route}) {
 
 const { orderDetails } = route.params || {};
 const [selectedPayment, setSelectedPayment] = useState(null);
-console.log(selectedPayment?.type," something")
+// console.log(selectedPayment?.type," something")
 
     // const { orderDetails } = route.params;
     const {

@@ -1,5 +1,6 @@
-import { Alert, Button, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Alert, Button, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
+import { Image } from 'expo-image';
 
 const Tabs = () => {
 
