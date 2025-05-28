@@ -3,6 +3,7 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { Image } from 'expo-image';
+import card from '../../assets/starbucks.png';
 
 const HomeSection = () => {
 
@@ -19,22 +20,22 @@ const HomeSection = () => {
     {/* card view */}
             <View style={{height: 90, flexDirection: 'row', alignItems: 'center'}}>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{paddingLeft: 30}}>
-                <View style={styles.box}>
+                <TouchableOpacity style={styles.box} onPress={() => alert('Your new card has been added')}>
                     <View style={{ height:'50', width:'80', justifyContent: 'center', alignItems: 'center', margin: 'auto', borderWidth: 1, borderColor:'#d4c495', borderStyle: 'dashed'}}>
                         <AntDesign name="pluscircle" size={20} color="#d4c495" />
                     </View>
+                </TouchableOpacity>
+                <View style={styles.box}>
+                    <Image source={card} style={{  height: 50, width: '80%', borderRadius: 5}} contentFit='contain'/>
                 </View>
                 <View style={styles.box}>
-                    <Image source={{ uri: 'https://www.starbucks.co.th/stb-media/2020/10/CARD-STARBUCKS-CARD-WORDMARK.png'}} style={{  height: 50, width: '80%'}} resizeMode='contain'/>
+                    <Image source={card} style={{  height: 50, width: '80%', borderRadius: 5}} contentFit='contain'/>
                 </View>
                 <View style={styles.box}>
-                    <Image source={{ uri: 'https://www.starbucks.co.th/stb-media/2020/10/CARD-STARBUCKS-CARD-WORDMARK.png'}} style={{  height: 50, width: '80%'}} resizeMode='contain'/>
+                    <Image source={card} style={{  height: 50, width: '80%', borderRadius: 5}} contentFit='contain'/>
                 </View>
                 <View style={styles.box}>
-                    <Image source={{ uri: 'https://www.starbucks.co.th/stb-media/2020/10/CARD-STARBUCKS-CARD-WORDMARK.png'}} style={{  height: 50, width: '80%'}} resizeMode='contain'/>
-                </View>
-                <View style={styles.box}>
-                    <Image source={{ uri: 'https://www.starbucks.co.th/stb-media/2020/10/CARD-STARBUCKS-CARD-WORDMARK.png'}} style={{  height: 50, width: '80%'}} resizeMode='contain'/>
+                    <Image source={card} style={{  height: 50, width: '80%', borderRadius: 5}} contentFit='contain'/>
                 </View>
                 </ScrollView>
             </View>
@@ -50,8 +51,8 @@ const HomeSection = () => {
                     <Text style={{color: "#414141", fontSize: 12, fontWeight: 500, textAlign: 'center', marginTop: 10}}>Order</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => 
-                navigation.navigate('PaymentPage2')}
-                    // alert("Payment page can be reached after order page")} 
+                // navigation.navigate('PaymentPage2')}
+                    alert("Payment page can be reached after order page")} 
                     id='Payment'>
                     <Image source={{ uri: 'https://liliebakery.fr/wp-content/uploads/2024/10/latte-macchiato-recette-facile-lilie-bakery.jpg' }} style={{ width: 70, height: 70, borderRadius: 100}} />
                     <Text style={{color: "#414141", fontSize: 12, fontWeight: 500, textAlign: 'center', marginTop: 10}}>Payment</Text>

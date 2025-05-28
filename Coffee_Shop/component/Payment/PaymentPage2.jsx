@@ -72,7 +72,7 @@ export default function PaymentPage2() {
               <SquareRadioButton value={{ type: 'master', price: '693.000', cardNo: '6136 **** **** 3746', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2560px-MasterCard_Logo.svg.png' }} selectedValue={selectedPayment} onPress={setSelectedPayment} />
             </View>
             <View style={styles.box}>
-                <Image source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2560px-MasterCard_Logo.svg.png'}} style={{  height: 50, width: '80%'}} resizeMode='contain'/>
+                <Image source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2560px-MasterCard_Logo.svg.png'}} style={{  height: 50, width: '80%'}} contentFit='contain'/>
             </View>
             </View>
             <Text style={{fontSize: 12, fontWeight: 400, color:'#04643c'}}>Rp 693.000</Text>
@@ -84,7 +84,7 @@ export default function PaymentPage2() {
               <SquareRadioButton value={{ type: 'visa', price: '263.000', cardNo: '4716 **** **** 8295', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Visa_2021.svg/1200px-Visa_2021.svg.png' }} selectedValue={selectedPayment} onPress={setSelectedPayment} />
             </View>
             <View style={styles.box}>
-                <Image source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Visa_2021.svg/1200px-Visa_2021.svg.png'}} style={{  height: 50, width: '80%'}} resizeMode='contain'/>
+                <Image source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Visa_2021.svg/1200px-Visa_2021.svg.png'}} style={{  height: 50, width: '80%'}} contentFit='contain'/>
             </View>
             </View>
             <Text style={{fontSize: 12, fontWeight: 400, color:'#04643c'}}>Rp 263.000</Text>
@@ -100,7 +100,7 @@ export default function PaymentPage2() {
               <SquareRadioButton value={{ type: 'paypal', price: '884.000', cardNo: '7295 **** **** 9137', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png' }} selectedValue={selectedPayment} onPress={setSelectedPayment} />
             </View>
             <View style={styles.box}>
-                <Image source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png'}} style={{  height: 50, width: '80%'}} resizeMode='contain'/>
+                <Image source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png'}} style={{  height: 50, width: '80%'}} contentFit='contain'/>
             </View>
             </View>
             <Text style={{fontSize: 12, fontWeight: 400, color:'#04643c'}}>Rp 884.000</Text>

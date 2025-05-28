@@ -7,6 +7,8 @@ import {
   Dimensions,
   Animated,
 } from 'react-native';
+import { Image } from 'expo-image';
+import card from '../../assets/starbucks.png';
 
 const { width } = Dimensions.get('window');
 const ITEM_WIDTH = width * 0.7;
@@ -67,7 +69,8 @@ const Carousel = () => {
                 },
               ]}
             >
-              <Text style={styles.title}>{item.title}</Text>
+              {/* <Text style={styles.title}>{item.title}</Text> */}
+              <Image source={card} style={{height: '100%', width: '100%', borderRadius: 10}} contentFit='contain' />
             </Animated.View>
           );
         }}
@@ -84,7 +87,8 @@ const styles = StyleSheet.create({
     width: ITEM_WIDTH,
     // marginHorizontal: 10,   // creating a side effect with a gap in the left while scrolling
     
-    height: 200,
+    // height: 200,
+    aspectRatio: '1.586/1',
     backgroundColor: '#6c5ce7',
     borderRadius: 14,
     alignItems: 'center',

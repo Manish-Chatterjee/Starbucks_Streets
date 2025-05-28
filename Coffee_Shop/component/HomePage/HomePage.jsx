@@ -15,11 +15,25 @@ export default function HomePage({ route }) {
 
     // const { username } = route.params; // Get the username from the route params
 
+      // Function to get greeting based on current hour
+  const getGreeting = () => {
+    const hour = new Date().getHours();
+    if (hour >= 5 && hour < 12) {
+      return 'Good Morning';
+    } else if (hour >= 12 && hour < 17) {
+      return 'Good Afternoon';
+    } else {
+      return 'Good Evening';
+    }
+  };
+
+  const greeting = getGreeting();
+
   return (
     <View style={{backgroundColor: "#04643c"}}>
       <View style={styles.container}>
         <View>
-          <Text style={{color: 'white'}}>Good Morning</Text>
+          <Text style={{color: 'white'}}>{greeting}</Text>
           <Text style={styles.name}>Manish</Text>
         </View>
         <Image source={{ uri: 'https://liliebakery.fr/wp-content/uploads/2024/10/latte-macchiato-recette-facile-lilie-bakery.jpg' }} style={{ width: 60, height: 60, borderRadius: 100, borderWidth: 1, borderColor: 'white'}} />

@@ -78,16 +78,16 @@ export default function TopUp() {
             <Text style={{fontSize: 18, fontWeight: 500, marginLeft: 30}}>Payment Method</Text>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{paddingLeft: 30}}>
               <View style={styles.box}>
-                  <Image source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2560px-MasterCard_Logo.svg.png'}} style={{  height: 50, width: '80%'}} resizeMode='contain'/>
+                  <Image source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2560px-MasterCard_Logo.svg.png'}} style={{  height: 50, width: '80%'}} contentFit='contain'/>
               </View>
               <View style={styles.box}>
-                  <Image source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Visa_2021.svg/1200px-Visa_2021.svg.png'}} style={{  height: 50, width: '80%'}} resizeMode='contain'/>
+                  <Image source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Visa_2021.svg/1200px-Visa_2021.svg.png'}} style={{  height: 50, width: '80%'}} contentFit='contain'/>
               </View>
               <View style={styles.box}>
-                  <Image source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png'}} style={{  height: 50, width: '80%'}} resizeMode='contain'/>
+                  <Image source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png'}} style={{  height: 50, width: '80%'}} contentFit='contain'/>
               </View>
               <View style={styles.box}>
-                  <Image source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/4/42/Paytm_logo.png'}} style={{  height: 50, width: '80%'}} resizeMode='contain'/>
+                  <Image source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/4/42/Paytm_logo.png'}} style={{  height: 50, width: '80%'}} contentFit='contain'/>
               </View>
             </ScrollView>
               <Text style={{fontSize: 18, fontWeight: 500, marginLeft: 30}}>Select top-up value</Text>

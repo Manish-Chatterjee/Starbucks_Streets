@@ -133,7 +133,7 @@ export default function PaymentPage1({route}) {
     // onPress={() => navigation.navigate('TopUp')}
 
 const { orderDetails } = route.params || {};
-const [selectedPayment, setSelectedPayment] = useState(null);
+const [selectedPayment, setSelectedPayment] = useState({ type: 'paypal', price: '884.000', cardNo: '7295 **** **** 9137', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png' });
 // console.log(selectedPayment?.type," something")
 
     // const { orderDetails } = route.params;
@@ -279,7 +279,7 @@ const goToPaymentPage2 = () => {
                     <Image 
                     // source={{ uri: 'https://www.starbucks.co.th/stb-media/2020/10/CARD-STARBUCKS-CARD-WORDMARK.png'}} 
                     source={{ uri: selectedPayment?.image }}
-                    style={{height: 50, width: 80, marginRight: 10}} resizeMode='contain'/>
+                    style={{height: 50, width: 80, marginRight: 10}} contentFit='contain'/>
 
                     <View>
                         <Text>{selectedPayment?.cardNo}</Text>
