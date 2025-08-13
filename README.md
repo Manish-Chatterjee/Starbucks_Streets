@@ -1,5 +1,5 @@
 
-<h1 style="text-decoration: none; border-bottom: none; filter:drop-shadow(0 0 5px #1f4fff); color: #61d5ff; text-align: center; border-block: 5px double; line-height: 60px; border-radius: 10%; margin-bottom: 50px">
+<h1 style="text-decoration: none; border-bottom: none; filter:drop-shadow(0 0 5px #058d54ff); color: #34f1a2ff; text-align: center; border-block: 5px double; line-height: 60px; border-radius: 10%; margin-bottom: 50px">
 Starbucks Streets</h1>
 
 <h2 style="border: 0.1px solid white; font-family: Sail; box-shadow: 0 0 10px white; border-radius: 5px; width: fit-content; padding: 5px 7px; margin-block: 20px">
@@ -74,13 +74,17 @@ Installation</h2>
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Manish-Chatterjee/Coffee_Shop_Mobile.git
+   git clone https://github.com/Manish-Chatterjee/Starbucks_Streets.git
    ```
-2. Navigate to the project directory:
+2. Install expo globally:
    ```bash
-   cd <project-directory>
+   npm install -g expo-cli
    ```
-3. Install the dependencies:
+3. Navigate to the project directory:
+   ```bash
+   cd Starbucks_streets
+   ```
+4. Install the dependencies:
    ```bash
    npm install
    ```
@@ -94,19 +98,20 @@ Usage</h2>
 
 Instructions on how to run the project:
 ```bash
-npm start
+npx expo start
 ```
-or
-```bash
-npm run <specific-command>
-```
+=> Open the Expo Go app on your phone.
+
+=> Scan the QR code from your terminal or browser.
+
+=> The app should load instantly on your device.
 </div>
 
 <!-- <br/> -->
 
-<h2 style="border: 0.1px solid white; font-family: Sail; box-shadow: 0 0 10px white; border-radius: 5px; width: fit-content; padding: 5px 7px; margin-block: 30px">
+<!-- <h2 style="border: 0.1px solid white; font-family: Sail; box-shadow: 0 0 10px white; border-radius: 5px; width: fit-content; padding: 5px 7px; margin-block: 30px">
 Contributing</h2>
 
 <p style="margin-inline: 30px">
 Guidelines for contributing to the project.
-</p>
+</p> -->
