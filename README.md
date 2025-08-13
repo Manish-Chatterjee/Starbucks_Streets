@@ -1,3 +1,4 @@
+![CoffeeShop](https://github.com/user-attachments/assets/a9c1ca69-9521-416e-984d-75cef8a14d98)
 
 <h1 style="text-decoration: none; border-bottom: none; filter:drop-shadow(0 0 5px #058d54ff); color: #34f1a2ff; text-align: center; border-block: 5px double; line-height: 60px; border-radius: 10%; margin-bottom: 50px">
 Starbucks Streets</h1>
