@@ -1,0 +1,53 @@
+[
+    {
+        "name": "Espresso",
+        "image": "https://archive.starbucks.com/uploads/2018/12/thumb-104-hero-1080x1080.jpg",
+        "price": 48,
+        "includes": "The coffee is bold but easy-drinking. The caramel lends a distinct buttery sweetness. The fluffy swirl of whipped cream adds just the right touch of decadence. That’s tough to beat by any measure."
+    },
+    {
+        "name": "Cappuccino",
+        "image": "https://archive.starbucks.com/uploads/2018/12/thumb-104-hero-1080x1080.jpg",
+        "price": 35
+    },
+    {
+        "name": "Latte",
+        "image": "https://archive.starbucks.com/uploads/2018/12/thumb-104-hero-1080x1080.jpg",
+        "price": 28
+    },
+    {
+        "name": "Americano",
+        "image": "https://archive.starbucks.com/uploads/2018/12/thumb-104-hero-1080x1080.jpg",
+        "price": 42
+    },
+    {
+        "name": "Mocha",
+        "image": "https://archive.starbucks.com/uploads/2018/12/thumb-104-hero-1080x1080.jpg",
+        "price": 36
+    },
+    {
+        "name": "Flat White",
+        "image": "https://archive.starbucks.com/uploads/2018/12/thumb-104-hero-1080x1080.jpg",
+        "price": 24
+    },
+    {
+        "name": "Macchiato",
+        "image": "https://archive.starbucks.com/uploads/2018/12/thumb-104-hero-1080x1080.jpg",
+        "price": 28
+    },
+    {
+        "name": "Cold Brew",
+        "image": "https://archive.starbucks.com/uploads/2018/12/thumb-104-hero-1080x1080.jpg",
+        "price": 30
+    },
+    {
+        "name": "Affogato",
+        "image": "https://archive.starbucks.com/uploads/2018/12/thumb-104-hero-1080x1080.jpg",
+        "price": 45
+    },
+    {
+        "name": "Irish Coffee",
+        "image": "https://archive.starbucks.com/uploads/2018/12/thumb-104-hero-1080x1080.jpg",
+        "price": 50
+    }
+]
