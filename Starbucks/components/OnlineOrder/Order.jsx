@@ -18,7 +18,7 @@ export default function Order() {
   // State to keep track of active button
   const [activeButton, setActiveButton] = useState(null);
 
-  console.log("Mounted → Order");
+  // console.log("Mounted → Order");
 
   // Function to toggle the liked state
   const toggleLike = (id) => {
